@@ -1,19 +1,16 @@
-
+%{?_javapackages_macros:%_javapackages_macros}
 Name:          jackson-parent
 Version:       2.4.1
-Release:       1%{?dist}
+Release:       1.1
 Summary:       Parent pom for all Jackson components
+Group:		Development/Java
 License:       ASL 2.0
 URL:           https://github.com/FasterXML/jackson-parent
 Source0:       https://github.com/FasterXML/jackson-parent/archive/%{name}-%{version}.tar.gz
 # jackson-parent package don't include the license file
 # reported @ https://github.com/FasterXML/jackson-parent/issues/1
 Source1:       http://www.apache.org/licenses/LICENSE-2.0.txt
-%if %{?fedora} > 20
 BuildRequires: mvn(com.fasterxml:oss-parent:pom:)
-%else
-BuildRequires: mvn(com.fasterxml:oss-parent)
-%endif
 BuildRequires: mvn(junit:junit)
 BuildRequires: maven-local
 BuildRequires: replacer
