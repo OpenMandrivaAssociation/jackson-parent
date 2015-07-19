@@ -1,7 +1,7 @@
 %{?_javapackages_macros:%_javapackages_macros}
 Name:          jackson-parent
 Version:       2.4.1
-Release:       1.1
+Release:       1.2
 Summary:       Parent pom for all Jackson components
 Group:		Development/Java
 License:       ASL 2.0
