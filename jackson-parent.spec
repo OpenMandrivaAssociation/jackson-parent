@@ -1,7 +1,7 @@
 %{?_javapackages_macros:%_javapackages_macros}
 Name:          jackson-parent
-Version:       2.4.1
-Release:       1.4
+Version:       2.21
+Release:       1
 Summary:       Parent pom for all Jackson components
 Group:		Development/Java
 License:       ASL 2.0
@@ -20,7 +20,7 @@ BuildArch:     noarch
 Project for parent pom for all Jackson components.
 
 %prep
-%setup -q -n %{name}-%{name}-%{version}
+%setup -q -n jackson-parent-jackson-parent-2.21
 
 cp -p %{SOURCE1} .
 sed -i 's/\r//' LICENSE-2.0.txt
