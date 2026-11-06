@@ -1,40 +1,27 @@
-%{?_javapackages_macros:%_javapackages_macros}
-Name:          jackson-parent
-Version:       2.21
-Release:       1
-Summary:       Parent pom for all Jackson components
+Name:		jackson-parent
+Version:	2.21
+Release:	1
+Summary:	Parent POM for Jackson components
 Group:		Development/Java
-License:       ASL 2.0
-URL:           https://github.com/FasterXML/jackson-parent
-Source0:       https://github.com/FasterXML/jackson-parent/archive/%{name}-%{version}.tar.gz
-# jackson-parent package don't include the license file
-# reported @ https://github.com/FasterXML/jackson-parent/issues/1
-Source1:       http://www.apache.org/licenses/LICENSE-2.0.txt
-BuildRequires: mvn(com.fasterxml:oss-parent:pom:)
-BuildRequires: mvn(junit:junit)
-BuildRequires: maven-local
-BuildRequires: replacer
-BuildArch:     noarch
+License:	ASL 2.0
+URL:		https://github.com/FasterXML/jackson-parent
+Source0:	https://github.com/FasterXML/jackson-parent/archive/%{name}-%{version}.tar.gz
+Source1:	https://www.apache.org/licenses/LICENSE-2.0.txt
+
+BuildArch:	noarch
+BuildRequires:	python
+BuildRequires:	maven
+BuildRequires:	java-current-devel
+BuildRequires:	mvn(com.fasterxml:oss-parent:pom::)
+BuildSystem:	maven
+BuildOption:	-N validate
 
 %description
-Project for parent pom for all Jackson components.
+Parent POM for the Jackson components.
 
 %prep
-%setup -q -n jackson-parent-jackson-parent-2.21
-
+%setup -q -n jackson-parent-jackson-parent-%{version}
 cp -p %{SOURCE1} .
-sed -i 's/\r//' LICENSE-2.0.txt
-
-%build
-
-%mvn_build
-
-%install
-%mvn_install
 
 %files -f .mfiles
 %doc LICENSE-2.0.txt README.md
-
-%changelog
-* Wed Jul 02 2014 gil cattaneo <puntogil@libero.it> 2.4.1-1
-- initial rpm
