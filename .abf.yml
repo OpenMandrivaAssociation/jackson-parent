@@ -1,3 +1,5 @@
 sources:
   LICENSE-2.0.txt: 2b8b815229aa8a61e483fb4ba0588b8b6c491890
+  jackson-parent-2.23.tar.gz: 92bee428d50439b27a2f1c00f98cc68d03f4f650
+removed_sources:
   jackson-parent-2.21.tar.gz: f36b25bffc2d87e633ec778ea8fd09f3579c226a
